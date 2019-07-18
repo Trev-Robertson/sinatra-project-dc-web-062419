@@ -8,7 +8,4 @@ class ApplicationController < Sinatra::Base
     erb :home
   end
 
-  get '/search' do
-    
-  end
 end

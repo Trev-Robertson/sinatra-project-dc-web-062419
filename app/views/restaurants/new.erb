@@ -1,9 +1,15 @@
 <h1>Add a Restaurant</h1>
 
 <h3>Search for a Restaurant</h3>
-<form action="/search">
-  
+<form action="/restaurants/search" method="GET">
+<label for="city">City</label>
+<input type="text" name="city">
+<label for="cuisine">Cuisine</label>
+<input type="text" name="cuisine">
+<input type="submit" value="Search">
 </form>
+
+
 
 <h3>Create a new Restaurant</h3>
 <form action="/restaurants" method="POST">

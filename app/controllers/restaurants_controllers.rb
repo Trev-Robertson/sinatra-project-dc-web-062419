@@ -19,6 +19,16 @@ class RestaurantsController < Sinatra::Base
     redirect "/restaurants/#{restaurant.id}"
   end
 
+  get '/restaurants/search' do
+     params2 = {term: "restaurant",
+                term: params[:cuisine]
+     }
+     response = Yelp::Fusion.client.search(params[:city], params2)
+
+      @businesses = response.businesses
+    erb :search_results
+  end
+
   get '/restaurants/:id' do
     @users = User.all
     @restaurant = Restaurant.find(params[:id])
@@ -51,4 +61,6 @@ class RestaurantsController < Sinatra::Base
     end
     redirect "/restaurants/#{restaurant.id}"
   end
+
+
 end
