@@ -6,6 +6,7 @@ set :method_override, true
 
 
         get '/restaurants' do
+           @restaurants = Restaurant.all
          erb :index
         end
 
@@ -13,6 +14,9 @@ set :method_override, true
             erb :new
         end
 
+         get '/restaurants/:id' do
+            erb :show
+        end
 
 
     
