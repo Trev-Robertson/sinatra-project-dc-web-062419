@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'bundler/setup'
 require_relative 'api_key'
 
@@ -5,7 +7,7 @@ Bundler.require
 
 require_all('app/')
 
-set :database, {adapter: "sqlite3", database: "db/database.sqlite3"}
+set :database, adapter: 'sqlite3', database: 'db/database.sqlite3'
 
 require 'yelp/fusion'
 

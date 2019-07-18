@@ -1,5 +1,22 @@
+<a href="/users/new">Add a user</a>
+<a href="/restaurants/new">Add a restaurant</a>
+<a href="/users">See all users</a>
+
+<h1><%=@restaurant.name%></h1>
+
+<p>Address: <%=@restaurant.address %></p>
+<p>Rating: <%=@restaurant.rating %></p>
+
+<form action="/restaurants/<%=@restaurant.id%>" method="POST">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete Restaurant">
+</form>
 
 
-
-
-    <>
+<form action="/adduserto" method="POST">
+  <select name="user_id" id="">
+  
+  </select>
+  <input type="hidden" name="restaurant_id" value="<%=@restaurant.id%>">
+  <input type="submit" value="Add user">
+</form>

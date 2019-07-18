@@ -1,0 +1,21 @@
+
+
+<form action="/restaurants/<%=@restaurant.id%>" method="POST">
+    <input type="hidden" name="_method" value="patch">
+    <label for="name">Name</label>
+    <input type="text" name="name" value="<%=@restaurant.name%>">
+
+    <label for="rating">Rating</label>
+    <select name="rating">
+      <% 5.times do |i| %>
+        <% index = i + 1 %>
+        <option <%= 'selected' if @restaurant.rating == index %> value="<%=index%>"><%=index%></option>
+      <% end %>
+    </select>
+    
+    <label for="address">Address</label>
+    <input type="text" name="address" value="<%=@restaurant.address%>">
+
+    <input type="submit" value="Add Restaurant">
+    
+    </form>
