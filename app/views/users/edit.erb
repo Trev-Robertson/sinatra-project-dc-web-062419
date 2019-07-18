@@ -1,0 +1,11 @@
+<a href="/restaurants/new">Add a Restaurant</a>
+<a href="/users">See all Users</a>
+<a href="/restaurants">See all Restaurants</a>
+
+<h1><%=@user.name  %></h1>
+
+<form action="/users/<%=@user.id%>" method="POST">
+  <input type="hidden" name="_method" value="patch">
+  <input type="text" name="name" value="<%=@user.name%>">
+  <input type="submit" value="Edit User">
+</form>

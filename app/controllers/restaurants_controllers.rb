@@ -20,6 +20,7 @@ class RestaurantsController < Sinatra::Base
   end
 
   get '/restaurants/:id' do
+    @users = User.all
     @restaurant = Restaurant.find(params[:id])
     erb :show
   end
@@ -41,10 +42,13 @@ class RestaurantsController < Sinatra::Base
     redirect '/restaurants'
   end
 
-  post 'adduserto' do
+  post '/adduserto' do
     user = User.find(params[:user_id])
     restaurant = Restaurant.find(params[:restaurant_id])
-    user.restaurants << restaurant
+
+    if !user.restaurants.include?(restaurant)
+      user.restaurants << restaurant
+    end
     redirect "/restaurants/#{restaurant.id}"
   end
 end

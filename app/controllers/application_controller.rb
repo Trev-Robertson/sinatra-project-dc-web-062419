@@ -5,7 +5,10 @@ class ApplicationController < Sinatra::Base
   set(:views, 'app/views')
 
   get '/' do
-    client = Yelp::Fusion.client
-    client.search('San Francisco')
+    erb :home
+  end
+
+  get '/search' do
+    
   end
 end
