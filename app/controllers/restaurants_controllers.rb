@@ -30,6 +30,7 @@ class RestaurantsController < Sinatra::Base
   end
 
   get '/restaurants/:id' do
+    
     @users = User.all
     @restaurant = Restaurant.find(params[:id])
     erb :show
